@@ -1,3 +1,3 @@
 # CC_Seby_2021
 
-Gitub c EZ
+Gitub c EZ PZ LEMON SQUEAZY
