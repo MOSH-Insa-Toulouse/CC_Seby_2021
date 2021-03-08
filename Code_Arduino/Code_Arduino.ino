@@ -105,11 +105,11 @@ void loop()
 {
 
   tension = analogRead(analog_port)*5.0/1024.0;
-  resistance = (1+100)*100000*(5/tension)-100000-10000;
+  resistance = (1.0+100.0)*100000.0*(5.0/tension)-100000.0-10000.0;
   
   
   //Affichage_Tension (tension) ;
-  Affichage_Resistance(resistance/1000000);
+  Affichage_Resistance(resistance/1000000.0);
   
   Bluetooth.print(tension);
   Bluetooth.print(",");
