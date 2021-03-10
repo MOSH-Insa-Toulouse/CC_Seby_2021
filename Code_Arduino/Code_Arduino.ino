@@ -144,9 +144,8 @@ void loop()
   resistance = (1.0+100.0)*100000.0*(5.0/tension)-100000.0-10000.0;
 
   //Envoie des données par Bluetooth
-  Bluetooth.print(resistance/1000000.0);
+ Bluetooth.print(resistance/1000000.0);
   Bluetooth.print(",");
-  delay(50);
 
   //Gestion du bouton de l'encodeur rotatoir
   swState = digitalRead(Switch);
