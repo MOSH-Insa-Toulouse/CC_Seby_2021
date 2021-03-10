@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name CC_&_Seby)(type Legacy)(uri ${KIPRJMOD}/CC_&_Seby.lib)(options "")(descr ""))
+  (lib (name Shield-rescue)(type Legacy)(uri ${KIPRJMOD}/Shield-rescue.lib)(options "")(descr ""))
 )

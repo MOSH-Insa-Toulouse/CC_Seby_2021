@@ -27,12 +27,28 @@ SoftwareSerial Bluetooth(rxPin,txPin);
 #define SCREEN_ADDRESS 0x3C
 Adafruit_SSD1306 display(-1);  //-1 car pas de pin reset
 
+//Encodeur rotatoir
+#define CLK 2      //CLK Output A
+#define DATA 3     //DT Output B
+#define Switch 4   //Switch connection
+
 /**********************************
 ****** Variables Globales  *******
 **********************************/
 
 double tension;
 double resistance;
+
+volatile unsigned int Selector = 0;
+//0 Resistance
+//1 Tension
+
+volatile unsigned int Menu = 0;
+//0  mesure on 
+//1  mesure off, menu
+
+bool swState  = HIGH;
+bool swLast  = LOW;
 
 /**********************************
 *********** Fonctions *************
@@ -64,7 +80,7 @@ void Affichage_Resistance (double r)
   display.setTextColor(WHITE);
 
   //Affichage de la résistance
-    Serial.println(r);
+  Serial.println(r);
   display.setCursor(5, 0);
   display.println(F("Resistance"));
   display.setCursor(0, 17);
@@ -74,6 +90,18 @@ void Affichage_Resistance (double r)
   display.display();
 }
 
+void Menu_OLED()
+{
+  if (Selector == 0)
+  {
+    Selector = 1;
+  }
+  else 
+  {
+    Selector = 0;
+  }
+}
+
 /**********************************
 ****** Programme Principal ********
 **********************************/
@@ -81,13 +109,22 @@ void Affichage_Resistance (double r)
 void setup()
 {
 
- //Ouverture des ports
+ 
+ //Configuration des ports du bluetooth
  pinMode(rxPin,INPUT);
  pinMode(txPin,OUTPUT);
+
+ //Configuration des ports de l'encodeur rotatoir
+ pinMode(CLK,INPUT);
+ digitalWrite(CLK,HIGH);
+ pinMode(DATA,INPUT);
+ digitalWrite(DATA,HIGH);
+
+ //Ouverture des ports
  Bluetooth.begin(baudrate);
  Serial.begin(baudrate);
  display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS);
-
+ 
  //Écran de démarrage
  display.clearDisplay();
  display.setTextSize(2); 
@@ -99,21 +136,79 @@ void setup()
 
 }
 
-
-
 void loop() 
 {
 
+  //Mesures
   tension = analogRead(analog_port)*5.0/1024.0;
   resistance = (1.0+100.0)*100000.0*(5.0/tension)-100000.0-10000.0;
-  
-  
-  //Affichage_Tension (tension) ;
-  Affichage_Resistance(resistance/1000000.0);
-  
-  Bluetooth.print(tension);
-  Bluetooth.print(",");
 
+  //Envoie des données par Bluetooth
+  Bluetooth.print(resistance/1000000.0);
+  Bluetooth.print(",");
   delay(50);
+
+  //Gestion du bouton de l'encodeur rotatoir
+  swState = digitalRead(Switch);
+  if (swState == HIGH && swLast == LOW && Menu ==0) 
+  {
+    Menu=1;
+    attachInterrupt(digitalPinToInterrupt(DATA), Menu_OLED, RISING);
+    delay(500);//debounce 
+  }
+  else if (swState == HIGH && swLast == LOW && Menu ==1) 
+  {
+    Menu=0;
+    detachInterrupt(digitalPinToInterrupt(DATA)); 
+    delay(500);//debounce
+  }
+  swLast = swState;
+
+  //Gestion de l'Affichage sur l'écran OLED
+  switch (Menu)
+  {
+    case 0 :
+      switch (Selector)
+    {
+      case 0 : 
+      Affichage_Resistance(resistance/1000000.0);
+      break;
   
+      case 1 :
+      Affichage_Tension (tension) ;
+      break;
+    }
+    break;
+    
+    case 1 :
+      switch (Selector)
+    {
+      case 0 : 
+      //Configuration de l'écran
+      display.clearDisplay();
+      display.setTextSize(1); 
+      display.setTextColor(WHITE);
+  
+      display.setCursor(5, 0);
+      display.println(F(" -> Resistance"));
+      display.setCursor(30, 17);
+      display.println(F("Tension"));
+      display.display();
+      break;
+  
+      case 1 :
+      //Configuration de l'écran
+      display.clearDisplay();
+      display.setTextSize(1); 
+      display.setTextColor(WHITE);
+  
+      display.setCursor(30, 0);
+      display.println(F("Resistance"));
+      display.setCursor(5, 17);
+      display.println(F(" -> Tension"));
+      display.display();
+      break;
+    }
+    break;
+  } 
 }
