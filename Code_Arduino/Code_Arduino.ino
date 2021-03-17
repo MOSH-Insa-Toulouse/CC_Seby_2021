@@ -36,7 +36,7 @@ Adafruit_SSD1306 display(-1);  //-1 car pas de pin reset
 ****** Variables Globales  *******
 **********************************/
 
-double tension;
+float tension;
 double resistance;
 
 volatile unsigned int Selector = 0;
@@ -144,8 +144,10 @@ void loop()
   resistance = (1.0+100.0)*100000.0*(5.0/tension)-100000.0-10000.0;
 
   //Envoie des données par Bluetooth
- Bluetooth.print(resistance/1000000.0);
-  Bluetooth.print(",");
+  byte V = map(analogRead(analog_port),0,1024,0,255);
+  Bluetooth.write(V);
+
+  delay(100);
 
   //Gestion du bouton de l'encodeur rotatoir
   swState = digitalRead(Switch);
