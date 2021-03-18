@@ -39,6 +39,7 @@ Adafruit_SSD1306 display(-1);  //-1 car pas de pin reset
 float tension;
 double resistance;
 
+//Variables de l'encodeur
 volatile unsigned int Selector = 0;
 //0 Resistance
 //1 Tension
