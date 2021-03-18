@@ -140,14 +140,16 @@ void loop()
 {
 
   //Mesures
-  tension = analogRead(analog_port)*5.0/1024.0;
-  resistance = (1.0+100.0)*100000.0*(5.0/tension)-100000.0-10000.0;
+  tension = analogRead(analog_port);
 
   //Envoie des données par Bluetooth
-  byte V = map(analogRead(analog_port),0,1024,0,255);
+  byte V = map(tension,0,1023,0,255);
   Bluetooth.write(V);
 
-  delay(100);
+  tension = tension*5/1024;
+  resistance = (1.0+100.0)*100000.0*(5.0/tension)-100000.0-10000.0;
+
+  delay(250);
 
   //Gestion du bouton de l'encodeur rotatoir
   swState = digitalRead(Switch);
