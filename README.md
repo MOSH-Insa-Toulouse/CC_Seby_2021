@@ -24,6 +24,33 @@ Nous vous souhaitons bonne navigation dans notre GitHub !
 
 Ce Git contient tous les fichiers requis pour le projet capteur 2021 du Génie Physique de l'INSA de Toulouse.
 
+**Code Arduino**
+
+- Mesure la tension de sortie du circuit transimpédance
+- Envoie la mesure de la tension en Bluetooth sur 1 octet
+- Calcule la résistance du capteur grâce à l'équation de transfert du circuit dans la data sheet
+- Affiche les mesures sur un écran oled 128x64
+- Gère l'encodeur rotatoire pour interagir avec un menu sur l'écran oled
+
+**KICAD**
+
+Projet complet de design de shield Arduino pour :
+
+- Interfacer un module Bluetooth
+- Interfacer un écran oled
+- Interfacer notre capteur graphite via un circuit transimpédence
+
+**Application Android**
+
+- Récupère la mesure de tension
+- Calcule la résistance du capteur grâce à l'équation de transfert du circuit dans la data sheet
+- Affiche la valeur de la résistance 
+- Trace un graphique déroulant de la résistance du capteur
+- Mise à l'échelle du graphique grâce à un slider
+
+**Data Sheet**
+
+
 ## 2. Configuration de l'environnement logiciel
 
 ### 2.1. Arduino
