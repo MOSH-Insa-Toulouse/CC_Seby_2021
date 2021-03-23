@@ -4,18 +4,19 @@ Nous vous souhaitons bonne navigation dans notre GitHub !
 
 # Sommaire
 <!-- TOC depthFrom:2 -->
-- [Projet Capteur Graphite](#projet-capteur-graphite)
-- [Sommaire](#sommaire)
   - [1. Description](#1-description)
   - [2. Configuration de l'environnement logiciel](#2-configuration-de-lenvironnement-logiciel)
     - [2.1. Arduino](#21-arduino)
       - [2.1.1. Bibliothèques](#211-bibliothèques)
     - [2.2. KICAD](#22-kicad)
+    - [2.3. Application Android](#23-application-android)
+      - [2.3.1. Installer l'application](#231-installer-lapplication)
+      - [2.3.2. Modifier l'application](#232-modifier-lapplication)
   - [3. Problèmes Connus](#3-problèmes-connus)
     - [3.1. Problème 1 : KICAD - Taille des pistes](#31-problème-1--kicad---taille-des-pistes)
     - [3.2. Problème 2 : KICAD - Taille des pins](#32-problème-2--kicad---taille-des-pins)
     - [3.3. Problème 3 : KICAD - Place du capteur](#33-problème-3--kicad---place-du-capteur)
-    - [3.4. Problème 4 : KICAD - Orientation de l'encodeur rotatoir](#34-problème-4--kicad---orientation-de-lencodeur-rotatoir)
+    - [3.4. Problème 4 : KICAD - Orientation de l'encodeur rotatoire](#34-problème-4--kicad---orientation-de-lencodeur-rotatoire)
   - [4. Informations sur les auteurs](#4-informations-sur-les-auteurs)
 <!-- /TOC -->
 
@@ -41,6 +42,16 @@ Comment installer une bibliothèque Arduino ? : https://www.arduino.cc/en/Guide/
 ### 2.2. KICAD
 
 Lien pour installer KICAD sur sa machine : https://www.kicad.org/
+
+### 2.3. Application Android
+
+#### 2.3.1. Installer l'application
+
+Lien pour installer un fichier .apk à partir d'un PC : https://fr.wikihow.com/installer-sur-un-Android-des-fichiers-APK-%C3%A0-partir-d%E2%80%99un-PC
+
+#### 2.3.2. Modifier l'application
+
+Pour modifier le code de l'application Android, vous pouvez utiliser le fichier en .aia dans MIT Inventor : https://appinventor.mit.edu/
 
 ## 3. Problèmes Connus
 
