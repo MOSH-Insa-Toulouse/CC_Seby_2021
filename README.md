@@ -62,7 +62,7 @@ Lien pour installer KICAD sur sa machine : https://www.kicad.org/
 
 **Solution**
 
-### 3.4. Problème 4 : KICAD - Orientation de l'encodeur rotatoir
+### 3.4. Problème 4 : KICAD - Orientation de l'encodeur rotatoire
 
 **Description du problème**
 
