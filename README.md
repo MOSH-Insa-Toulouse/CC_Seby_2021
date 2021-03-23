@@ -38,7 +38,7 @@ Projet complet de design de shield Arduino pour :
 
 - Interfacer un module Bluetooth
 - Interfacer un écran oled
-- Interfacer notre capteur graphite via un circuit transimpédence
+- Interfacer notre capteur graphite via un circuit transimpédance
 
 **Application Android**
 
