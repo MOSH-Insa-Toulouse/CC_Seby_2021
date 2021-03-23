@@ -34,11 +34,12 @@ Ce Git contient tous les fichiers requis pour le projet capteur 2021 du Génie P
 
 **KICAD**
 
-Projet complet de design de shield Arduino pour :
+Projet complet de design de shield pour Arduino Uno :
 
-- Interfacer un module Bluetooth
-- Interfacer un écran oled
-- Interfacer notre capteur graphite via un circuit transimpédance
+- Interface un module Bluetooth
+- Interface un écran oled
+- Interface notre capteur graphite via un circuit transimpédance
+- Interface un encodeur rotatoire
 
 **Application Android**
 
