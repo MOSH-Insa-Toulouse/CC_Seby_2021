@@ -88,7 +88,7 @@ Pour modifier le code de l'application Android, vous pouvez utiliser le fichier 
 
 À l'INSA Toulouse, la méthode d'impression du Shield par photolithographie avec du matériel rudimentaire a engendré de nombreux court-circuits entre les pistes de la plaque. Il peut-être judicieux d'augmenter la taille des pistes du PCB dans KICAD selon le matériel. **À l'INSA 0.8mm sont recommandés**
 
-**Comment modifier la taille des pistes**
+**Comment modifier la taille des pistes ?**
 
 ![Étape 1](Images/KICAD-Changement_Taille_Pistes_1.png)
 ![Étape 2](Images/KICAD-Changement_Taille_Pistes_2.png)
