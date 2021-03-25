@@ -132,7 +132,7 @@ Le bouton poussoir de l'encodeur rotatoire est actuellement orienté vers l'int�
 
 ## 4. Remerciements
 
-Nous tenons à remercier tout particulièrement Jordi ROUBICHOU et Mathias SOULIER pour leur aide dans la caractérisation de la déformation des différents capteurs. 
+Nous tenons à remercier toutes les personnes qui nous ont aidé tout au long de ce projet !
 
 ## 5. Informations sur les auteurs
 
