@@ -12,12 +12,13 @@ Nous vous souhaitons bonne navigation dans notre GitHub !
     - [2.3. Application Android](#23-application-android)
       - [2.3.1. Installer l'application](#231-installer-lapplication)
       - [2.3.2. Modifier l'application](#232-modifier-lapplication)
-  - [3. Problèmes Connus](#3-problèmes-connus)
-    - [3.1. Problème 1 : KICAD - Taille des pistes](#31-problème-1--kicad---taille-des-pistes)
-    - [3.2. Problème 2 : KICAD - Taille des pins](#32-problème-2--kicad---taille-des-pins)
-    - [3.3. Problème 3 : KICAD - Place du capteur](#33-problème-3--kicad---place-du-capteur)
-    - [3.4. Problème 4 : KICAD - Orientation de l'encodeur rotatoire](#34-problème-4--kicad---orientation-de-lencodeur-rotatoire)
-  - [4. Informations sur les auteurs](#4-informations-sur-les-auteurs)
+  - [3. Améliorations Possibles](#3-améliorations-possibles)
+    - [3.1. Amélioration 1 : KICAD - Taille des pistes](#31-amélioration-1--kicad---taille-des-pistes)
+    - [3.2. Amélioration 2 : KICAD - Taille des pastilles](#32-amélioration-2--kicad---taille-des-pastilles)
+    - [3.3. Amélioration 3 : KICAD - Place du capteur](#33-amélioration-3--kicad---place-du-capteur)
+    - [3.4. Amélioration 4 : KICAD - Orientation de l'encodeur rotatoire](#34-amélioration-4--kicad---orientation-de-lencodeur-rotatoire)
+  - [4. Remerciements](#4-remerciements)
+  - [5. Informations sur les auteurs](#5-informations-sur-les-auteurs)
 <!-- /TOC -->
 
 ## 1. Description 
@@ -81,34 +82,59 @@ Lien pour installer un fichier .apk à partir d'un PC : https://fr.wikihow.com/i
 
 Pour modifier le code de l'application Android, vous pouvez utiliser le fichier en .aia dans MIT Inventor : https://appinventor.mit.edu/
 
-## 3. Problèmes Connus
+## 3. Améliorations Possibles
 
-### 3.1. Problème 1 : KICAD - Taille des pistes
+### 3.1. Amélioration 1 : KICAD - Taille des pistes
+
+À l'INSA Toulouse, la méthode d'impression du Shield par photolithographie avec du matériel rudimentaire a engendré de nombreux court-circuits entre les pistes de la plaque. Il peut-être judicieux d'augmenter la taille des pistes du PCB dans KICAD selon le matériel. **À l'INSA 0.8mm sont recommandés**
+
+**Comment modifier la taille des pistes**
+
+![Étape 1](Images/KICAD-Changement_Taille_Pistes_1.png)
+![Étape 2](Images/KICAD-Changement_Taille_Pistes_2.png)
+![Étape 3](Images/KICAD-Changement_Taille_Pistes_3.png)
+![Étape 4](Images/KICAD-Changement_Taille_Pistes_4.png)
+
+Il faut ensuite supprimer les pistes et refaire le routage de la carte.
+
+### 3.2. Amélioration 2 : KICAD - Taille des pastilles
+
+À l'INSA Toulouse, le foret de la perceuse a un diamètre de 0.8mm, il faut donc prévoir un **perçage supérieur ou égal à 0.8mm**.
+
+![Étape 1](/Images/KICAD-Changement_Taille_Pastille_1.png)
+![Étape 2](/Images/KICAD-Changement_Taille_Pastille_2.png)
+![Étape 3](/Images/KICAD-Changement_Taille_Pastille_3.png)
+![Étape 4&5](/Images/KICAD-Changement_Taille_Pastille_4&5.png)
+
+
+### 3.3. Amélioration 3 : KICAD - Place du capteur
 
 **Description du problème**
 
-**Solution**
+Les pins de connexion fournis du shield à l'Arduino étant un peu courts. Les soudures des connexions du capteur sont en contact avec le boitier de blindage de l'USB qui est à la masse. Nous avons rajouté une feuille de papier entre le Shield et l'Arduino afin d'assurer l'isolation. Un changement de design du Shield serait donc judicieux avant toute nouvelle impression.
 
-### 3.2. Problème 2 : KICAD - Taille des pins
+**Solution Proposée**
 
-**Description du problème**
+![Étape 1](/Images/KICAD-Changement_Capteur_1.png)
+![Étape 2](/Images/KICAD-Changement_Capteur_2.png)
 
-**Solution**
 
-### 3.3. Problème 3 : KICAD - Place du capteur
-
-**Description du problème**
-
-**Solution**
-
-### 3.4. Problème 4 : KICAD - Orientation de l'encodeur rotatoire
+### 3.4. Amélioration 4 : KICAD - Orientation de l'encodeur rotatoire
 
 **Description du problème**
 
-**Solution**
+Le bouton poussoir de l'encodeur rotatoire est actuellement orienté vers l'intérieur du shield. La manipulation pourrait être améliorée en orientant l'encodeur vers l'extérieur du shield.
 
+**Solution proposée**
 
-## 4. Informations sur les auteurs
+![Étape 1](/Images/KICAD-Changement_ROT_1.png)
+![Étape 2](/Images/KICAD-Changement_ROT_2.png)
+
+## 4. Remerciements
+
+Nous tenons à remercier tout particulièrement Jordi ROUBICHOU et Mathias SOULIER pour leur aide dans la caractérisation de la déformation des différents capteurs. 
+
+## 5. Informations sur les auteurs
 
 **Séléna PONDARD**
 
