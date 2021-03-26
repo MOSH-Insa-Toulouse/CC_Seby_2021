@@ -30,7 +30,7 @@ Ce Git contient tous les fichiers requis pour le projet capteur 2021 du Génie P
 - Mesure la tension de sortie du circuit transimpédance
 - Envoie la mesure de la tension en Bluetooth sur 1 octet
 - Calcule la résistance du capteur grâce à l'équation de transfert du circuit dans la data sheet
-- Affiche les mesures sur un écran oled 128x64
+- Affiche les mesures sur un écran oled 128x32
 - Gère l'encodeur rotatoire pour interagir avec un menu sur l'écran oled
 
 **KICAD**
