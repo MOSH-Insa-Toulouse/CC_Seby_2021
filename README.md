@@ -17,6 +17,7 @@ Nous vous souhaitons bonne navigation dans notre GitHub !
     - [3.2. Amélioration 2 : KICAD - Taille des pastilles](#32-amélioration-2--kicad---taille-des-pastilles)
     - [3.3. Amélioration 3 : KICAD - Place du capteur](#33-amélioration-3--kicad---place-du-capteur)
     - [3.4. Amélioration 4 : KICAD - Orientation de l'encodeur rotatoire](#34-amélioration-4--kicad---orientation-de-lencodeur-rotatoire)
+    - [3.5. Amélioration 5 : Arduino & Android - Économie du buffer Bluetooth](#35-amélioration-5--arduino--android---économie-du-buffer-bluetooth)
   - [4. Remerciements](#4-remerciements)
   - [5. Informations sur les auteurs](#5-informations-sur-les-auteurs)
 <!-- /TOC -->
@@ -44,9 +45,10 @@ Projet complet de design de shield pour Arduino Uno :
 
 **Application Android**
 
-- Récupère la mesure de tension
+- Récupère la mesure de tension en binaire sur 1 octet
+- Affiche la valeur de la tension en Volt
 - Calcule la résistance du capteur grâce à l'équation de transfert du circuit dans la data sheet
-- Affiche la valeur de la résistance 
+- Affiche la valeur de la résistance MΩ
 - Trace un graphique déroulant de la résistance du capteur
 - Mise à l'échelle du graphique grâce à un slider
 
@@ -129,6 +131,25 @@ Le bouton poussoir de l'encodeur rotatoire est actuellement orienté vers l'int�
 
 ![Étape 1](/Images/KICAD-Changement_ROT_1.png)
 ![Étape 2](/Images/KICAD-Changement_ROT_2.png)
+
+### 3.5. Amélioration 5 : Arduino & Android - Économie du buffer Bluetooth
+
+**Description**
+
+Actuellement, la carte Arduino envoie continuellement les mesures de tension dans le buffer du Bluetooth peu importe qu'un appareil soit connecté ou pas. Le buffer du dongle Bluetooth est alors rempli de vieilles mesures qui seront quand même lues lorsqu'un appareil se mettra à lire les données.
+
+**Solution Proposée**
+
+_Arduino_
+
+- Création d'une variable Mode_Bluetooth de type entier 
+- Création d'une procédure de modification de Mode_Bluetooth lors de la réception de strings particuliers en Bluetooth
+- Ajout d'un bloc If Mode_Bluetooth qui conditionne l'envoi des mesures en Bluetooth
+
+_Android_
+
+- Envoi d'un string en Bluetooth (ex : "ON") lorsqu'on démarre le timer de mesure
+- Envoi d'un string en Bluetooth (ex : "OFF") lorsqu'on arrête le timer de mesure
 
 ## 4. Remerciements
 
