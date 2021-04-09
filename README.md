@@ -54,6 +54,14 @@ Projet complet de design de shield pour Arduino Uno :
 
 **Data Sheet**
 
+- Caractéristiques principales
+- Description du capteur 
+- Schéma et dimensions 
+- Spécifications
+- Conditions d'utilisation normales
+- Caractéristiques électriques
+- Caractéristiques de déformation
+- Montage typique d'utilisation
 
 ## 2. Configuration de l'environnement logiciel
 
