@@ -76,6 +76,8 @@ Lien pour installer KICAD sur sa machine : https://www.kicad.org/
 
 ### 2.3. Application Android
 
+![Application Android](Images/Application_Android.png)
+
 #### 2.3.1. Installer l'application
 
 Lien pour installer un fichier .apk à partir d'un PC : https://fr.wikihow.com/installer-sur-un-Android-des-fichiers-APK-%C3%A0-partir-d%E2%80%99un-PC
