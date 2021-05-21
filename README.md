@@ -3,7 +3,26 @@
 Nous vous souhaitons bonne navigation dans notre GitHub ! 
 
 # Sommaire
-<!-- TOC depthFrom:2 -->autoauto- [1. Description](#1-description)auto- [2. Configuration de l'environnement logiciel](#2-configuration-de-lenvironnement-logiciel)auto    - [2.1. Arduino](#21-arduino)auto        - [2.1.1. Bibliothèques](#211-bibliothèques)auto    - [2.2. KICAD](#22-kicad)auto    - [2.3. Application Android](#23-application-android)auto        - [2.3.1. Installer l'application](#231-installer-lapplication)auto        - [2.3.2. Modifier l'application](#232-modifier-lapplication)auto- [3. Améliorations Possibles](#3-améliorations-possibles)auto    - [3.1. Amélioration 1 : KICAD - Taille des pistes](#31-amélioration-1--kicad---taille-des-pistes)auto    - [3.2. Amélioration 2 : KICAD - Taille des pastilles](#32-amélioration-2--kicad---taille-des-pastilles)auto    - [3.3. Amélioration 3 : KICAD - Place du capteur](#33-amélioration-3--kicad---place-du-capteur)auto    - [3.4. Amélioration 4 : KICAD - Orientation de l'encodeur rotatoire](#34-amélioration-4--kicad---orientation-de-lencodeur-rotatoire)auto    - [3.5. Amélioration 5 : Arduino & Android - Économie du buffer Bluetooth](#35-amélioration-5--arduino--android---économie-du-buffer-bluetooth)auto- [4. Remerciements](#4-remerciements)auto- [5. Informations sur les auteurs](#5-informations-sur-les-auteurs)autoauto<!-- /TOC -->
+<!-- TOC depthFrom:2 -->
+- [Projet Capteur Graphite](#projet-capteur-graphite)
+- [Sommaire](#sommaire)
+  - [1. Description](#1-description)
+  - [2. Configuration de l'environnement logiciel](#2-configuration-de-lenvironnement-logiciel)
+    - [2.1. Arduino](#21-arduino)
+      - [2.1.1. Bibliothèques](#211-bibliothèques)
+    - [2.2. KICAD](#22-kicad)
+    - [2.3. Application Android](#23-application-android)
+      - [2.3.1. Installer l'application](#231-installer-lapplication)
+      - [2.3.2. Modifier l'application](#232-modifier-lapplication)
+  - [3. Améliorations Possibles](#3-améliorations-possibles)
+    - [3.1. Amélioration 1 : KICAD - Taille des pistes](#31-amélioration-1--kicad---taille-des-pistes)
+    - [3.2. Amélioration 2 : KICAD - Taille des pastilles](#32-amélioration-2--kicad---taille-des-pastilles)
+    - [3.3. Amélioration 3 : KICAD - Place du capteur](#33-amélioration-3--kicad---place-du-capteur)
+    - [3.4. Amélioration 4 : KICAD - Orientation de l'encodeur rotatoire](#34-amélioration-4--kicad---orientation-de-lencodeur-rotatoire)
+    - [3.5. Amélioration 5 : Arduino & Android - Économie du buffer Bluetooth](#35-amélioration-5--arduino--android---économie-du-buffer-bluetooth)
+  - [4. Remerciements](#4-remerciements)
+  - [5. Informations sur les auteurs](#5-informations-sur-les-auteurs)
+<!-- /TOC -->
 
 ## 1. Description 
 
